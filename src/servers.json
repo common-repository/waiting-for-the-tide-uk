@@ -1,0 +1,92 @@
+{
+    "cornwall": {
+        "name": "Cornwall",
+        "domain": "https://www.uk-tides.com",
+        "all": "cornwall",
+        "port": 0,
+        "home": "https://www.cornwall-tides.com/",
+        "display": "www.cornwall-tides.com",
+        "timezone": "GMT+1"
+    },
+    "devon": {
+        "name": "Devon",
+        "domain": "https://www.uk-tides.com",
+        "all": "devon",
+        "port": 0,
+        "home": "https://www.devon-tides.com/",
+        "display": "www.devon-tides.com",
+        "timezone": "GMT+1"
+    },
+    "dorset": {
+        "name": "Dorset",
+        "domain": "https://www.uk-tides.com",
+        "all": "dorset",
+        "port": 0,
+        "home": "https://www.dorset-tides.com/",
+        "display": "www.dorset-tides.com",
+        "timezone": "GMT+1"
+    },
+    "hampshire": {
+        "name": "Hampshire",
+        "domain": "https://www.uk-tides.com",
+        "all": "hampshire",
+        "port": 0,
+        "home": "https://www.hampshire-tides.com/",
+        "display": "www.hampshire-tides.com",
+        "timezone": "GMT+1"
+    },
+    "sussex": {
+        "name": "Sussex",
+        "domain": "https://www.uk-tides.com",
+        "all": "sussex",
+        "port": 0,
+        "home": "https://www.sussex-tides.com/",
+        "display": "www.sussex-tides.com",
+        "timezone": "GMT+1"
+    },
+    "kent": {
+        "name": "Kent",
+        "domain": "https://www.uk-tides.com",
+        "all": "kent",
+        "port": 0,
+        "home": "https://www.kent-tides.com/",
+        "display": "www.kent-tides.com",
+        "timezone": "GMT+1"
+    },
+    "london": {
+        "name": "London",
+        "domain": "https://www.uk-tides.com",
+        "all": "london",
+        "port": 0,
+        "home": "https://www.london-tides.com/",
+        "display": "www.london-tides.com",
+        "timezone": "GMT+1"
+    },
+    "essex": {
+        "name": "Essex",
+        "domain": "https://www.uk-tides.com",
+        "all": "essex",
+        "port": 0,
+        "home": "https://www.essex-tides.com/",
+        "display": "www.essex-tides.com",
+        "timezone": "GMT+1"
+    },
+    "suffolk": {
+        "name": "Suffolk",
+        "domain": "https://www.uk-tides.com",
+        "all": "suffolk",
+        "port": 0,
+        "home": "https://www.suffolk-tides.com/",
+        "display": "www.suffolk-tides.com",
+        "timezone": "GMT+1"
+    },
+    "norfolk": {
+        "name": "Norfolk",
+        "domain": "https://www.uk-tides.com",
+        "all": "norfolk",
+        "port": 0,
+        "home": "https://www.norfolk-tides.com/",
+        "display": "www.norfolk-tides.com",
+        "timezone": "GMT+1"
+    }
+}

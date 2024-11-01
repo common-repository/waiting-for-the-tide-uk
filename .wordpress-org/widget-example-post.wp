@@ -1,0 +1,53 @@
+<!-- wp:paragraph -->
+<p>Example of Tide shortcode</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
+<div class="wp-block-group"><!-- wp:shortcode -->
+[tide_plugin title="1 Tide Basic" type="card" map="false" days="3" theme="basic" slider="true"]Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.[/tide_plugin]
+<!-- /wp:shortcode -->
+
+<!-- wp:shortcode -->
+[tide_plugin title="2 Tide Ocean"  type="card" map="false" days="3" theme="ocean" slider="true"]Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.[/tide_plugin]
+<!-- /wp:shortcode --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+<div class="wp-block-group"><!-- wp:shortcode -->
+[tide_plugin title="3  Tide Space"   type="card" map="false" days="3" theme="space" slider="true"]Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.[/tide_plugin]
+<!-- /wp:shortcode -->
+
+<!-- wp:shortcode -->
+[tide_plugin title="4 Tide Gray" type="card" map="false" days="3" theme="grey" slider="true"]Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.[/tide_plugin]
+<!-- /wp:shortcode --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
+<div class="wp-block-group"><!-- wp:shortcode -->
+[tide_plugin title="Map Tide Basic" type="card" map="true" mapheight="250px" days="3" theme="basic" slider="true"]Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.[/tide_plugin]
+<!-- /wp:shortcode -->
+
+<!-- wp:shortcode -->
+[tide_plugin title="Map Tide Ocean"  type="card" map="true" mapheight="250px" days="3" theme="ocean" slider="true"]Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.[/tide_plugin]
+<!-- /wp:shortcode --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+<div class="wp-block-group"><!-- wp:shortcode -->
+[tide_plugin title="5 Tide Basic"  type="table" map="false" days="2" theme="basic" slider="true"]Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.[/tide_plugin]
+<!-- /wp:shortcode -->
+
+<!-- wp:shortcode -->
+[tide_plugin title="6 Tide Ocean"  type="table" map="false" days="2" theme="ocean" slider="true"]Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.[/tide_plugin]
+<!-- /wp:shortcode --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"center","verticalAlignment":"top"}} -->
+<div class="wp-block-group"><!-- wp:shortcode -->
+[tide_plugin title="7 Tide Space"   type="table" map="false" days="2" theme="space" slider="false"]Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.[/tide_plugin]
+<!-- /wp:shortcode -->
+
+<!-- wp:shortcode -->
+[tide_plugin title="8 Tide Grey"   type="table" map="false" days="2" theme="grey" slider="false"]Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.[/tide_plugin]
+<!-- /wp:shortcode --></div>
+<!-- /wp:group -->

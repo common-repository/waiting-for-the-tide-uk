@@ -1,0 +1,354 @@
+@use "sass:map";
+@use 'tide-icons' as icons;
+
+/********************************************************************
+* Define themes:
+********************************************************************/
+$themes: (
+    "basic" : (
+        "table-type-base-font-size"         : 1em,             
+        "table-type-main-title-font-size"   : 1.4em,
+        "card-type-base-font-size"          : 1em,             
+        "card-type-main-title-font-size"    : 1.4em,
+        "card-type-main-border"             : 1px solid #d9d9d9,
+        "card-type-main-border-radius"      :10px,
+        "table-type-custom-upper-border"    : 0,
+        "table-type-custom-bottom-border"   : 0,
+        "card-type-custom-upper-border"     :  1px solid #d9d9d9,
+        "card-type-custom-bottom-border"    :  1px solid #d9d9d9,
+        "main-title-color"                  : rgb(51, 51, 51),
+        "main-bg-color"                     : transparent,
+        "icon-marker-color"                 : rgb(104, 104, 104),
+        "icon-calendar-color"               : rgb(104, 104, 104),
+        "icon-high-color"                   : rgb(104, 104, 104),
+        "icon-low-color"                    : rgb(104, 104, 104),
+        "table-type-date-font-size"         : 1.1em,
+        "table-type-data-table-border"      : 3px solid rgb(171, 171, 171),
+        "card-type-date-font-size"          : 1.1em,
+        "card-type-data-table-border"       : 3px solid rgb(171, 171, 171),
+        "table-type-powered-background"     : transparent,
+        "card-type-powered-background"      : rgb(239, 239, 239),
+    ),
+    "ocean" : (
+        "table-type-base-font-size"         : 1em,             
+        "table-type-main-title-font-size"   : 1.4em,
+        "card-type-base-font-size"          : 1em,             
+        "card-type-main-title-font-size"    : 1.4em,
+        "card-type-main-border"             : 1px solid #d9d9d9,
+        "card-type-main-border-radius"      : 10px,
+        "table-type-custom-upper-border"    : 0,
+        "table-type-custom-bottom-border"   : 0,
+        "card-type-custom-upper-border"     : 1px solid #d9d9d9,
+        "card-type-custom-bottom-border"    : 1px solid #d9d9d9,
+        "main-title-color"                  : rgb(54, 168, 203),
+        "main-bg-color"                     : transparent,
+        "icon-marker-color"                 : rgb(104, 104, 104),
+        "icon-calendar-color"               : rgb(104, 104, 104),
+        "icon-high-color"                   : rgb(54, 168, 203),
+        "icon-low-color"                    : rgb(54, 168, 203),
+        "table-type-date-font-size"         : 1.1em,
+        "table-type-data-table-border"      : 3px solid rgb(86, 169, 195),
+        "card-type-date-font-size"          : 1.1em,
+        "card-type-data-table-border"       : 3px solid rgb(171, 171, 171),
+        "table-type-powered-background"     : transparent,
+        "card-type-powered-background"      : rgba(54, 168, 203, .15),
+    ),
+    "space" : (
+        "table-type-base-font-size"         : 1em,             
+        "table-type-main-title-font-size"   : 1.4em,
+        "card-type-base-font-size"          : 1em,             
+        "card-type-main-title-font-size"    : 1.4em,
+        "card-type-main-border"             : 1px solid #d9d9d9,
+        "card-type-main-border-radius"      : 10px,
+        "table-type-custom-upper-border"    : 0,
+        "table-type-custom-bottom-border"   : 0,
+        "card-type-custom-upper-border"     : 1px solid #d9d9d9,
+        "card-type-custom-bottom-border"    : 1px solid #d9d9d9,
+        "main-title-color"                  : rgb(68, 87, 153),
+        "main-bg-color"                     : transparent,
+        "icon-marker-color"                 : rgb(57, 73, 119),
+        "icon-calendar-color"               : rgb(57, 73, 119),
+        "icon-high-color"                   : rgb(57, 73, 119),
+        "icon-low-color"                    : rgb(57, 73, 119),
+        "table-type-date-font-size"         : 1.1em,
+        "table-type-data-table-border"      : 3px solid rgb(137, 153, 201),
+        "card-type-date-font-size"          : 1.1em,
+        "card-type-data-table-border"       : 3px solid rgb(137, 153, 201),
+        "table-type-powered-background"     : transparent,
+        "card-type-powered-background"      : rgb(234, 239, 255),
+    )
+); 
+
+@function map-deep-get($map, $keys...) {
+    @each $key in $keys {
+        $map: map-get($map, $key);
+    }
+    @return $map;
+}
+
+@function get-from-theme($name, $key) {
+    @return map-deep-get($themes, $name, $key);
+}
+
+
+/********************************************************************
+* Main base style:
+********************************************************************/
+.tide-plugin {
+    box-sizing: border-box;
+    margin:0 auto;
+    display: block;
+    flex-grow: 1;
+    &.tide-table-view {
+        box-sizing: border-box;
+        // outline: 1px solid red;
+        h3 {
+            padding:0;
+            margin:0;
+            margin-top: 0.5rem;
+            font-weight: 600;
+            text-align: center;
+        }
+        .vendor-tag {
+            display: inline-block;
+            width: 100%;
+            opacity:.8;
+            margin:0;
+            margin-bottom: 1.5em;
+            text-align: center;
+            text-decoration: none;
+            font-style: normal;
+            box-shadow: none;
+            -webkit-box-shadow: none;
+            &:hover {
+                text-decoration: underline;
+                box-shadow: none;
+                -webkit-box-shadow: none;
+            }
+        }
+        .custom-content {
+            display: block;
+            margin:0;
+            margin-bottom: 1.5em;
+            padding: 1em 0;
+        }
+        h4 {
+            padding:0;
+            margin:0;
+            margin-bottom: 1.1em;
+            font-weight: 600;
+        }
+        table {
+            border: 0;
+            width:100%;
+            max-width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+            th {
+                border: 0;
+                text-align: center;
+                text-transform: capitalize;
+            }
+            td {
+                width: 33.3333%;
+                border: 0;
+                text-align: center;
+            }
+        }
+        .powered-by {
+            text-align: center;
+            a {
+                font-size: 0.9em;
+                box-shadow: none;
+                border:0;
+                display: inline-block;
+                padding: 2px 15px;
+                text-decoration: underline;
+            }
+        }
+    }
+    &.tide-card-view {
+        box-sizing: border-box;
+        padding:10px;
+        margin-bottom: 2.5em;
+        h3 {
+            padding:0;
+            margin:0;
+            margin-top: 0.5rem;
+            font-weight: 600;
+            text-align: center;
+        }
+        .vendor-tag {
+            display: inline-block;
+            width: 100%;
+            opacity:.7;
+            margin:0;
+            margin-bottom: 1.5em;
+            text-align: center;
+            text-decoration: none;
+            font-style: normal;
+            box-shadow: none;
+            -webkit-box-shadow: none;
+            &:hover {
+                text-decoration: underline;
+                box-shadow: none;
+                -webkit-box-shadow: none;
+            }
+        }
+        .custom-content {
+            display: block;
+            margin:0;
+            margin-bottom: 1.5em;
+            padding: 1em 0;
+        }
+        h4 {
+            padding:0;
+            margin:0;
+            margin-bottom: 1.1em;
+            font-weight: 600;
+        }
+        table {
+            border: 0;
+            width:100%;
+            max-width: 95%;
+            margin-left: auto;
+            margin-right: auto;
+            th {
+                border: 0;
+                border-bottom: 3px solid #a4c0e3;
+                text-align: center;
+                text-transform: capitalize;
+                font-weight: bold;
+            }
+            td {
+                border: 0;
+                border-bottom: 1px solid rgb(197, 197, 197);
+                text-align: center;
+            }
+        }
+        .powered-by {
+            text-align: center;
+            margin:0;
+            a {
+                box-shadow: none;
+                border:0;
+                display: block;
+                border-radius: 0;
+                padding: 2px 15px;
+                text-decoration: underline;
+            }
+        }
+    }
+    .tide-slider {
+        > .tide-data-entry:not(:first-child) {
+            display:none;
+        }
+        table {
+            max-width: 75%;
+        }
+    }
+}
+
+
+
+/********************************************************************
+* Theme mixin for genearting the theme style rules:
+********************************************************************/
+
+@mixin theme($name, $values) {
+    /*! THEME #{$name}:  **************/
+    .tide-plugin.theme-#{$name} {
+        background-color: map-get($values, "main-bg-color");
+        &.tide-table-view {
+            box-sizing: border-box;
+            font-size: map-get($values, "table-type-base-font-size");
+            h3 {
+                font-size: map-get($values, "table-type-main-title-font-size");
+                color: map-get($values, "main-title-color");
+            }
+            h4 {
+                font-size: map-get($values, "table-type-date-font-size");
+            }
+            table {
+                th {
+                    border-bottom: map-get($values, "table-type-data-table-border");
+                }
+                td {
+                    border-bottom: 1px solid rgb(197, 197, 197);
+                }
+            }
+            .custom-content {
+                border-top: map-get($values, "table-type-custom-upper-border");
+                border-bottom: map-get($values, "table-type-custom-bottom-border");
+            }
+            .powered-by {
+                a {
+                    background-color: map-get($values, "table-type-powered-background");
+                }
+            }
+        }
+        &.tide-card-view {
+            box-sizing: border-box;
+            font-size: map-get($values, "card-type-base-font-size");
+            border: map-get($values, "card-type-main-border");
+            border-radius: map-get($values, "card-type-main-border-radius");
+            h3 {
+                font-size: map-get($values, "card-type-main-title-font-size");
+                color: map-get($values, "main-title-color");
+            }
+            h4 {
+                font-size: map-get($values, "card-type-date-font-size");
+            }
+            table {
+                th {
+                    border-bottom: map-get($values, "card-type-data-table-border");
+                }
+                td {
+                    border-bottom: 1px solid rgb(197, 197, 197);
+                }
+            }
+            .custom-content {
+                border-top: map-get($values, "card-type-custom-upper-border");
+                border-bottom: map-get($values, "card-type-custom-bottom-border");
+            }
+            .powered-by {
+                a {
+                    background-color: map-get($values, "card-type-powered-background");
+                }
+            }
+        }
+        //icons
+        @include icons.generate(
+            $name: "high", 
+            $fill: map-get($values, "icon-high-color")
+        );
+        @include icons.generate(
+            $name: "low", 
+            $fill: map-get($values, "icon-low-color")
+        );
+        @include icons.generate(
+            $name: "marker", 
+            $fill: map-get($values, "icon-marker-color"),
+            $size: 1.2em
+        );
+        @include icons.generate(
+            $name: "calendar", 
+            $fill: map-get($values, "icon-calendar-color"),
+            $size: 1em,
+            $valign: baseline
+        );
+    }
+}
+
+/********************************************************************
+ * Apply Themes:
+ ********************************************************************/
+
+
+ @each $theme, $values in $themes {
+    @if $theme != default {
+        @include theme($theme, $values);
+    }
+ }
+
+

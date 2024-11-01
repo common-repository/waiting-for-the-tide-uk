@@ -1,0 +1,107 @@
+{#
+All variables expected:
+    - container_id
+    - container_class
+    - included_by
+    - theme
+    - location
+    - location_display
+    - content
+    - days
+    - type_header
+    - time_header
+    - height_header
+    - data
+    - footer_title
+    - footer_link_url
+    - footer_link_text
+    - data_location
+    - data_region
+    - map
+    - map_key
+    - map_location
+    - map_coordinates
+    - map_zoom
+    - map_type
+    - map_mode
+    - map_height
+    - map_width
+    - slider
+    - icons
+    - footer
+#}
+
+<section 
+    id="{{ container_id|e('html_attr') }}" 
+    class="{{ "#{container_class} tide-card-view #{included_by} #{theme}"|e('html_attr') }}" 
+    data-tide-region="{{ data_region|e('html_attr') }}" 
+    data-tide-location="{{ data_location|e('html_attr') }}"
+>
+    <h3> {{ location_display }} </h3>
+    <a class="vendor-tag" href="{{ footer_link_url|e('html_attr') }}" target="_blank"> 
+        {{ footer_link_text }} 
+    </a>
+    {% if content %}
+        <div class="custom-content">{{ content | raw }}</div>
+    {% endif %}
+    <div class="tide-location-map">
+        {% if map %}
+        <iframe
+            width="{{ map_width|e('html_attr') }}"
+            height="{{ map_height|e('html_attr') }}"
+            style="border:0"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            {% if map_coordinates %}
+                src="https://www.google.com/maps/embed/v1/{{ map_mode|e('html_attr') }}?zoom={{ map_zoom|e('html_attr') }}&maptype={{ map_type|e('html_attr') }}&key={{ map_key|e('html_attr') }}&q={{ map_coordinates|e('html_attr') }}">
+            {% else %}
+                src="https://www.google.com/maps/embed/v1/{{ map_mode|e('html_attr') }}?zoom={{ map_zoom|e('html_attr') }}&maptype={{ map_type|e('html_attr') }}&key={{ map_key|e('html_attr') }}&q=Space+Needle,{{ map_location|e('html_attr') }}">
+            {% endif %}
+        </iframe>
+        {% endif %}
+    </div>
+    <div class="tide-data {{ slider ? "tide-slider" }}">
+        {% set counter = 0 %}
+        {% for day in data %}
+            {% if counter < days %}
+                <div class="tide-data-entry">
+                    <h4 class="tide-date" style="text-align: center">
+                        {% if icons %}
+                            <span class="icon-tide-calendar"></span> 
+                        {% endif %}
+                        {{ day.title }}
+                    </h4>
+                    <table>
+                        <tr>
+                            <th>{{ type_header   }}</th>
+                            <th>{{ time_header   }}</th>
+                            <th>{{ height_header }}</th>
+                        </tr>
+                        {% for row in day.rows %}
+                            <tr>
+                                <td>
+                                    {% if icons and (row[0]|lower starts with "high") %}
+                                        <span class="icon-tide-high"></span> 
+                                    {% elseif icons %}
+                                        <span class="icon-tide-low"></span> 
+                                    {% endif %}
+                                    {{row[0] | raw}}
+                                </td>
+                                <td>{{row[1]}}</td>
+                                <td>{{row[2]}}</td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+            {% endif %}
+            {% set counter = counter + 1 %}
+        {% endfor %}
+    </div>
+    {% if footer %}
+        <p class="powered-by">
+            <a href="{{ footer_link_url|e('html_attr') }}" title="{{ footer_title|e('html_attr') }}" trget="_blank">
+                {{ footer_link_text }}
+            </a>
+        </p>
+    {% endif %}
+</section>
